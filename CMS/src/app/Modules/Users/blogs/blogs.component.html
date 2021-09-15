@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+<title>Basend</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+<body id="top">
+
+<div class="wrapper row3">
+  <main class="hoc container clear"> 
+    <div class="sectiontitle">
+      <h6 class="heading">Eu neque lacinia</h6>
+      <p>Orci ullamcorper posuere nulla facilisi maecenas convallis.</p>
+    </div>
+    <div class="one_third first">
+     
+      <input type="text" style="margin-bottom: 42px; width: 260px; height: 30px;" [(ngModel)]="searchValue" (ngModelChange)="search()" size="22" placeholder="Search" required>
+     
+
+    </div>
+    <div class="group excerpts">
+      <article class="one_third" [ngClass]="{'first': blo.first}" *ngFor="let blo of blogs">
+        <div class="hgroup">
+          <h6 class="heading">{{blo.title}}</h6>
+          </div>
+        <figure><a href="#"><img style="height: 190px;" src="{{blo.image}}" alt=""></a></figure>
+        <div class="txtwrap">
+            <p>{{blo.main}}</p>
+         </div>
+        <footer>
+            <footer><a class="btn" href="/view-blog/{{ blo._id }}">Read More &raquo;</a></footer>
+          <ul class="faico clear">
+            <li><a class="faicon-twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a class="faicon-linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+            <li><a class="faicon-google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>
+            <li><a class="faicon-vk" href="#"><i class="fa fa-vk"></i></a></li>
+          </ul>
+        </footer>
+      </article>
+
+
+    </div>
+    <div class="clear"></div>
+  </main>
+</div>
+
+</body>
+</html>

@@ -12,18 +12,18 @@
     <form >
       <div class="one_third first">
         <label for="fname">Username<span>*</span></label>
-        <input type="text" name="name" id="name" value="" size="22" required>
+        <input type="text" [(ngModel)]="userName" name="name" id="name" value="" size="22" required>
         
       </div>
       <div class="one_third first">
         <label for="lname">Password<span>*</span></label>
-        <input type="text" name="password" id="password" value="" size="22" required>
+        <input type="password" [(ngModel)]="pswd" name="password" id="password" value="" size="22" required>
        
 
       </div>
       
       <div class="one_third first">
-        <input type="submit"  style="background-color: #4CAF50;width: 246px;"  name="submit" value="Sign In">
+        <input type="submit" (click)="login()"  style="background-color: #4CAF50;width: 246px;"  name="submit" value="Sign In">
         
       </div>
     </form>

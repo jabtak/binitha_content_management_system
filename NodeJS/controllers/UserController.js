@@ -7,6 +7,14 @@ var { User } = require('../models/user');
 // => localhost:3000/employees/
 
 
+router.post('/login', (req, res) => {
+    User.find({ "username": req.body.username,"password": req.body.password })
+    .then(function (user) {
+      res.send(user);
+    });
+  
+});
+
 router.post('/', (req, res) => {
     var user = new User({
         firstName: req.body.firstName,

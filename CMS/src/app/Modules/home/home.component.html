@@ -61,7 +61,7 @@
         <div class="hgroup">
           <h6 class="heading">A. Doe</h6>
           <em>Chief Executive Officer</em></div>
-        <figure><a href="#"><img src="images/demo/photo-profil.jpg" alt=""></a></figure>
+        <figure><a href="#"><img src="../../../assets/images/demo/photo-profil.jpg" alt=""></a></figure>
         <div class="txtwrap">
           <p>Est sed tellus nunc hendrerit adipiscing nulla nunc id elit etiam tempus lectus vel posuere congue nunc quam varius lectus.</p>
         </div>
@@ -78,7 +78,7 @@
         <div class="hgroup">
           <h6 class="heading">B. Doe</h6>
           <em>General Manager</em></div>
-        <figure><a href="#"><img src="images/demo/istockphoto-11jpg.jpg" alt=""></a></figure>
+        <figure><a href="#"><img src="../../../assets/images/demo/istockphoto-11jpg.jpg" alt=""></a></figure>
         <div class="txtwrap">
           <p>At rutrum diam sem sed turpis mauris pede arcu molestie ut scelerisque id tincidunt tincidunt neque proin iaculis mauris eu.</p>
         </div>
@@ -95,7 +95,7 @@
         <div class="hgroup">
           <h6 class="heading">C. Doe</h6>
           <em>Marketing Manager</em></div>
-        <figure><a href="#"><img src="images/demo/360_F.jpg" alt=""></a></figure>
+        <figure><a href="#"><img src="../../../assets/images/demo/360_F.jpg" alt=""></a></figure>
         <div class="txtwrap">
           <p>Sodales cursus sapien erat pharetra justo vitae volutpat eros magna et magna praesent at lectus vestibulum ante ipsum primis.</p>
         </div>
@@ -141,64 +141,31 @@
 <div class="wrapper row3">
   <section class="hoc container clear"> 
     <div class="sectiontitle">
-      <h6 class="heading">Justo nunc dapibus</h6>
-      <p>Nisl vitae pulvinar nulla augue non leo in sed.</p>
+      <h6 class="heading">Daily Drops</h6>
+      <p>How To Start A Blog Today.
+        Everything You Need To Start Writing.
+      </p>
     </div>
     <div class="group excerpts">
-      <article class="one_third first">
+      <article class="one_third" [ngClass]="{'first': blo.first}" *ngFor="let blo of blogs">
         <figure><img src="./images/demo/unnamed.jpg" alt="">
           <figcaption>
-            <time datetime="2045-04-06T08:15+00:00"><strong>06</strong> <em>Apr</em></time>
+            <time datetime="2045-04-06T08:15+00:00"><strong>{{blo.dateCreated}}</strong> <em>{{blo.monthCreated}}</em></time>
           </figcaption>
         </figure>
         <div class="hgroup">
-          <h4 class="heading">Justo proin volutpat</h4>
+          <h4 class="heading">{{blo.title}}</h4>
           <ul class="nospace meta">
             <li>by <a href="#">Admin</a></li>
-            <li>in <a href="#">Category Name</a></li>
+            <li>in <a href="#">{{blo.category}}</a></li>
           </ul>
         </div>
-        <div class="txtwrap">
-          <p>Quisque sodales vestibulum fringilla risus in metus curabitur accumsan sem malesuada lorem accumsan viverra lorem ipsum dolor [&hellip;]</p>
+        <div class="txtwrap" style="height: 192px;">
+          <p> {{blo.main}} [&hellip;]</p>
         </div>
-        <footer><a class="btn" href="#">Read More &raquo;</a></footer>
+        <footer><a class="btn" href="/view-blog/{{ blo._id }}">Read More &raquo;</a></footer>
       </article>
-      <article class="one_third">
-        <figure><img src="./images/demo/iphone-11-pro.jpeg" alt="">
-          <figcaption>
-            <time datetime="2045-04-05T08:15+00:00"><strong>05</strong> <em>Apr</em></time>
-          </figcaption>
-        </figure>
-        <div class="hgroup">
-          <h4 class="heading">Ligula quis sapien</h4>
-          <ul class="nospace meta">
-            <li>by <a href="#">Admin</a></li>
-            <li>in <a href="#">Category Name</a></li>
-          </ul>
-        </div>
-        <div class="txtwrap">
-          <p>Sit amet consectetuer adipiscing elit vivamus pharetra libero non imperdiet mi augue feugiat nisl sit amet mollis enim velit [&hellip;]</p>
-        </div>
-        <footer><a class="btn" href="#">Read More &raquo;</a></footer>
-      </article>
-      <article class="one_third">
-        <figure><img src="images/demo/celo.jpg" alt="">
-          <figcaption>
-            <time datetime="2045-04-04T08:15+00:00"><strong>04</strong> <em>Apr</em></time>
-          </figcaption>
-        </figure>
-        <div class="hgroup">
-          <h4 class="heading">Vestibulum luctus nisi</h4>
-          <ul class="nospace meta">
-            <li>by <a href="#">Admin</a></li>
-            <li>in <a href="#">Category Name</a></li>
-          </ul>
-        </div>
-        <div class="txtwrap">
-          <p>Posuere metus etiam eleifend nisl nec lectus sed porttitor accumsan arcu nullam ac velit fusce scelerisque ligula sit amet urna [&hellip;]</p>
-        </div>
-        <footer><a class="btn" href="#">Read More &raquo;</a></footer>
-      </article>
+ 
     </div>
     <div class="clear"></div>
   </section>

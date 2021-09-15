@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+<title>Basend | Pages | Full Width</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+<body id="top">
+<div class="wrapper row3 div-reg" *ngIf="!showGrid">
+  <div id="comments">
+    <h2>BLOG POST</h2>
+    <form >
+      <div class="one_third first">
+        <label for="title">Title<span>*</span></label>
+        <input type="text" name="title"  [(ngModel)]="post.title" [ngModelOptions]="{standalone: true}" id="title" value="" size="22" required>
+        
+      </div>
+      <div class="one_third " >
+        <label for="gender" >Category</label>
+  
+          <select [(ngModel)]="post.category" [ngModelOptions]="{standalone: true}" style="width: 330px; height: 35px;" name="category" id="category">
+          <option value="select" selected="selected">Choose</option>
+          <option *ngFor="let cat of categories" value={{cat.name}}>{{ cat.name }}</option>
+          
+        </select>
+       </div>
+
+      <div class="block clear">
+        <label for="main">Post your main part<span>*</span></label>
+        <textarea rows="6" cols="80" style="width:685px" [(ngModel)]="post.main" [ngModelOptions]="{standalone: true}"></textarea>
+       
+    </div>
+
+      
+
+      <div class="block clear">
+        <label for="details">Other Details<span>*</span></label>
+      
+        <textarea rows="12" cols="80" style="width:685px" [(ngModel)]="post.details" [ngModelOptions]="{standalone: true}"></textarea> 
+       
+
+      </div>
+
+      <div class="one_third first">
+        <label for="img">Select image:<span>*</span></label>
+        <input type="file" (change)="onFileSelect($event)" [(ngModel)]="post.image" [ngModelOptions]="{standalone: true}" id="img" name="img" accept="image/*">
+        
+      
+       
+
+      </div>
+      
+      <div class="one_third first">
+        <input type="submit" *ngIf="!isEdit"  (click)="addPost()"  style="background-color: #4CAF50;width: 246px;"  name="submit" value="Add Post">
+        <input type="submit" *ngIf="isEdit" (click)="update()"  style="background-color: #4CAF50;width: 246px;"  name="submit" value="Update">
+      </div>
+    </form>
+  </div>
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+</div>
+<div class="wrapper row3 div-grid" *ngIf="showGrid">
+  <div class="btn-add">
+    <input type="submit" (click)="addNewClick()"  style="background-color: #4CAF50;width: 232px;margin-bottom: 21px;"  name="submit" value="Add New">
+    
+  </div>
+<div class="scrollable">
+  <table>
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Category</th>
+        <th>Edit</th>
+        <th>Delete</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr  *ngFor="let blo of blogs">
+        
+        <td>{{blo.title}}</td>
+        <td>{{blo.category}}</td>
+        <td><a (click)="edit(blo._id,blo)">Edit</a></td>
+        <td><a (click)="delete(blo._id)">Delete</a></td>
+      </tr>
+      
+    </tbody>
+  </table>
+</div>
+</div>
+</body>
+</html>
+  
+

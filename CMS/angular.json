@@ -34,12 +34,15 @@
               "src/styles.css",
               "src/assets/styles/framework.css",
               "src/assets/styles/layout.css",
-              "src/assets/styles/font-awesome.min.css"
+              "src/assets/styles/font-awesome.min.css",
+              "node_modules/summernote/dist/summernote-lite.min.css"
             ],
             "scripts": [
               "src/assets/scripts/jquery.backtotop.js",
               "src/assets/scripts/jquery.min.js",
-              "src/assets/scripts/jquery.mobilemenu.js"
+              "src/assets/scripts/jquery.mobilemenu.js",
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/summernote/dist/summernote-lite.min.js"
             ]
           },
           "configurations": {

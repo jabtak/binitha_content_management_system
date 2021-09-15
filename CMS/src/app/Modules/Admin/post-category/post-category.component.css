@@ -1,0 +1,25 @@
+
+.main-div{
+    background-color: white !important;
+  
+}
+
+.div-reg{
+    padding-top: 64px;
+    padding-left: 550px;
+    height: 500px;
+    padding-right: 30px;
+    
+}
+
+.div-grid{
+    padding-top: 64px;
+    padding-left: 119px;
+    height: 500px;
+    padding-right: 141px;
+    
+}
+
+.btn-add{
+    margin-left: 73%;
+}
