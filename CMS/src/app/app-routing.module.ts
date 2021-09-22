@@ -8,16 +8,20 @@ import {ViewBlogComponent } from '../app/Modules/Admin/view-blog/view-blog.compo
 import { BlogPostComponent } from '../app/Modules/Admin/blog-post/blog-post.component';
 import {BlogsComponent } from '../app/Modules/Users/blogs/blogs.component';
 import {MyBlogsComponent} from '../app/Modules/Users/my-blogs/my-blogs.component';
+import {UserProfileComponent} from '../app/Modules/Users/user-profile/user-profile.component';
+import {ChangePasswordComponent} from '../app/Modules/Users/change-password/change-password.component';
 
 const routes: Routes = [
     {path: '', component: HomeComponent},
     {path: 'sign-up', component: SignUpComponent},
     {path: 'sign-in', component: SignInComponent},
-    {path: 'post-catogery', component: PostCategoryComponent},
+    {path: 'post-category', component: PostCategoryComponent},
     {path: 'blog-post', component:BlogPostComponent},
     {path: 'view-blog/:id', component:ViewBlogComponent},
     {path: 'blogs', component:BlogsComponent},
-    {path: 'my-blogs', component:MyBlogsComponent}
+    {path: 'my-blogs', component:MyBlogsComponent},
+    {path: 'user-profile', component: UserProfileComponent},
+    {path: 'change-password', component: ChangePasswordComponent}
 ];
 
 @NgModule({

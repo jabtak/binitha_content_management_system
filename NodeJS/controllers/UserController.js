@@ -15,6 +15,40 @@ router.post('/login', (req, res) => {
   
 });
 
+router.put('/:id', (req, res) => {
+    var findid= req.params.id;
+    if (!ObjectId.isValid(req.params.id))
+        return res.status(400).send(`No record with given id : ${req.params.id}`);
+
+User.findByIdAndUpdate(findid, 
+    {
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        contact: req.body.contact,
+        gender: req.body.gender,
+        username: req.body.username,
+        email: req.body.email,
+        password: req.body.password
+    }
+    , (err, doc) => {
+    if (!err) { res.send(doc); }
+    else { 
+        console.log('Error in Update :' + JSON.stringify(err, undefined, 2)); }
+ });
+});
+
+router.get('/:id', (req, res) => {
+    if (!ObjectId.isValid(req.params.id))
+        return res.status(400).send(`No record with given id : ${req.params.id}`);
+
+    User.findById(req.params.id, (err, doc) => {
+        if (!err) { res.send(doc); }
+        else { console.log('Error in Retriving User :' + JSON.stringify(err, undefined, 2)); }
+    });
+});
+
+
+
 router.post('/', (req, res) => {
     var user = new User({
         firstName: req.body.firstName,

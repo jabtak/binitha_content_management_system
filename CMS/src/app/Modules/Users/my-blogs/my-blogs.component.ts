@@ -29,9 +29,12 @@ export class MyBlogsComponent implements OnInit {
   }
   
   getAllBlogs(){
+    var id = localStorage.getItem("userId");
     var month=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
     this.service.getAllBlogs().subscribe((result:any)=>{
     this.blogs = result;
+    if(id != undefined && id != null)
+      this.blogs = this.blogs.filter((b)=>{ return b.createdBy == id});
   for(var i=0; i< this.blogs.length;i++)
   {
     if(this.blogs[i].image != null && this.blogs[i].image != "null"){

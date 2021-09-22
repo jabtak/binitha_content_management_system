@@ -49,9 +49,11 @@ export class BlogPostComponent implements OnInit {
   
 
   addPost(){
+    var id = localStorage.getItem("userId");
     var date = new Date();
     console.log(this.post);
-    this.post.createdBy="534543534";
+    if(id != "null" && id != "undefined" && id != "null" && id != "undefined")
+     this.post.createdBy= id;
     this.post.createdDate = date;
     this.service.addPost(this.post).subscribe((result)=>{
       this.post = new Post();
@@ -97,9 +99,15 @@ export class BlogPostComponent implements OnInit {
 
 
     getAllBlogs(){
+    var isAdmin = localStorage.getItem("isAdmin");
+    var id = localStorage.getItem("userId");
     var month=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
     this.service.getAllBlogs().subscribe((result:any)=>{
     this.blogs = result;
+    
+    if(isAdmin == "No"){
+      this.blogs = this.blogs.filter((b)=>{ return b.createdBy == id});
+    }
     });
   }
 

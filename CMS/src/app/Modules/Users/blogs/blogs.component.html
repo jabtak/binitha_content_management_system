@@ -20,11 +20,11 @@
 
     </div>
     <div class="group excerpts">
-      <article class="one_third" [ngClass]="{'first': blo.first}" *ngFor="let blo of blogs">
+      <article class="one_third" style="height: 613px;" [ngClass]="{'first': blo.first}" *ngFor="let blo of blogs">
         <div class="hgroup">
           <h6 class="heading">{{blo.title}}</h6>
           </div>
-        <figure><a href="#"><img style="height: 190px;" src="{{blo.image}}" alt=""></a></figure>
+        <figure><a href="#"><img style="height: 190px; width: 307px; " src="{{blo.image}}" alt=""></a></figure>
         <div class="txtwrap">
             <p>{{blo.main}}</p>
          </div>

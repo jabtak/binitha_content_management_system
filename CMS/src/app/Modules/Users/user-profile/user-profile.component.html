@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+<title>Basend | Pages | Full Width</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+<body id="top">
+<div class="wrapper row3 div-reg">
+  <div id="comments">
+
+    <h2>User Profile</h2>
+    <form [formGroup]="userForm">
+      <div class="one_third first">
+        <label for="fname">First Name <span>*</span></label>
+        <input type="text" formControlName="firstName" [(ngModel)]="user.firstName" name="fname" id="fname" value="" size="22" required>
+        <small class="label-align-left" *ngIf="(user.firstName == null || user.firstName == undefined) && submitted">*Required  </small>
+      </div>
+      <div class="one_third">
+        <label for="lname">Last Name <span>*</span></label>
+        <input type="text" formControlName="lastName" [(ngModel)]="user.lastName" name="lname" id="lname" value="" size="22" required>
+        <small class="label-align-left" *ngIf="(user.lastName == null || user.lastName == undefined) && submitted">*Required  </small>
+
+      </div>
+      <div class="one_third " >
+        <label for="gender" >Gender</label>
+  
+          <select formControlName="gender" [(ngModel)]="user.gender" style="width: 397px; height: 35px;" name="gender" id="gender">
+          <option value="select">Choose</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+    
+        </select>
+        <small *ngIf="(user.gender == null || user.gender == undefined) && submitted" class="label-align-left">*Required  </small>
+       </div>
+      <div class="one_third first">
+        <label for="email">Email <span>*</span></label>
+        <input type="email" formControlName="email" [(ngModel)]="user.email" name="email" id="email" value="" size="22" required>
+        <small *ngIf="!isMail && (user.email != null && user.email != undefined)" class="label-align-left"> Invalid  </small>
+        <small *ngIf="(user.email == null || user.email == undefined) && submitted" class="label-align-left">*Required  </small>
+      
+      </div>
+     
+
+      <div class="one_third">
+        <label for="contact">Contact<span>*</span></label>
+        <input type="text" formControlName="contact" [(ngModel)]="user.contact" name="contact" id="contact" value="" size="22" required> 
+        <small *ngIf="(user.contact == null || user.contact == undefined) && submitted" class="label-align-left">*Required  </small>
+      </div>
+    
+  
+      <div class="one_third">
+        <label for="email">Username<span>*</span></label>
+        <input type="text" formControlName="username" [(ngModel)]="user.username" name="username" id="username" value="" size="22" required>
+        <small *ngIf="(user.username == null || user.username == undefined) && submitted" class="label-align-left">*Required  </small>
+      
+      </div>
+
+      
+     <br/><br/><br/><br/>
+     
+      <div style="margin-top: 113px;"> 
+        <input type="submit" (click)="saveProfile()" style="background-color: #4CAF50;width: 320px;"  name="submit" value="Save Changes">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="reset" style="background-color: #4CAF50;width: 320px;" name="reset" value="Cancel">
+      </div>
+    </form>
+  </div>
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+</div>
+</body>
+</html>

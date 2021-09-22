@@ -1,12 +1,10 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
+import { NgModule, APP_INITIALIZER, Injector, ErrorHandler } from '@angular/core';import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SignUpComponent } from './Modules/Users/sign-up/sign-up.component';
 import { HeaderComponent } from './Modules/header/header.component';
 import { FooterComponent } from './Modules/footer/footer.component';
-
+import {AppServiceService} from '../app/Modules/shared/app-service.service';
 
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
@@ -23,6 +21,8 @@ import { ViewBlogComponent } from './Modules/Admin/view-blog/view-blog.component
 import { NgxSummernoteModule } from 'ngx-summernote';
 import { BlogsComponent } from './Modules/Users/blogs/blogs.component';
 import { MyBlogsComponent } from './Modules/Users/my-blogs/my-blogs.component';
+import { UserProfileComponent } from './Modules/Users/user-profile/user-profile.component';
+import { ChangePasswordComponent } from './Modules/Users/change-password/change-password.component';
 
 
 
@@ -38,7 +38,9 @@ import { MyBlogsComponent } from './Modules/Users/my-blogs/my-blogs.component';
     BlogPostComponent,
     ViewBlogComponent,
     BlogsComponent,
-    MyBlogsComponent
+    MyBlogsComponent,
+    UserProfileComponent,
+    ChangePasswordComponent
     
     
   ],
@@ -52,7 +54,9 @@ import { MyBlogsComponent } from './Modules/Users/my-blogs/my-blogs.component';
     BrowserAnimationsModule,
     NgxSummernoteModule
   ],
-  providers: [ SignupService,AdminService],
+  providers: [ SignupService,AdminService,AppServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+

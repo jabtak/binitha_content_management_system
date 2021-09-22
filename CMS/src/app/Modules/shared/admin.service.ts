@@ -49,6 +49,14 @@ export class AdminService {
     return this.http.post('http://localhost:3000/user/login', user);
   }
 
+  getUserById(id: any){
+    return this.http.get('http://localhost:3000/user/' + id);
+  }
+
+  updateUserProfile(id: any, usr: User){
+    return this.http.put('http://localhost:3000/user/'+ id, usr);
+  }
+
   addComment(comment: Comment){
     return this.http.post('http://localhost:3000/comment', comment);
   }

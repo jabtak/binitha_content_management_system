@@ -39,7 +39,7 @@ export class ViewBlogComponent implements OnInit {
      this.comment.createdDate = date;
      this.comment.blogID = this.id;
      this.service.addComment(this.comment).subscribe((result:any)=>{
-
+          this.getComments();
        console.log(this.comment);
      });
    }
